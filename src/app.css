@@ -1,0 +1,3 @@
+.navtitle {
+    @apply mx-4 text-lg hover:text-cyan;
+}
