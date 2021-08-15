@@ -1,6 +1,6 @@
-.DS_Store
-node_modules
-/build
-/.svelte-kit
-/package
-.env
+bunkernet/.DS_Store
+bunkernet/node_modules
+bunkernet/build
+bunkernet/.svelte-kit
+bunkernet/package
+bunkernet/.env
