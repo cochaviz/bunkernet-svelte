@@ -6,9 +6,7 @@ jobs:
       - image: node
     steps:
       - checkout
-      - run: cd bunkernet && ls -al
-      - run: npm install
-      - run: npm build
+      - run: cd bunkernet && npm install && npm build
   publish:
     docker:
       - image: node
