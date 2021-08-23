@@ -8,7 +8,10 @@ export const fetchRepos = async (include) => {
   if (loaded) {
     return;
   }
-  const octo = new Octokit({auth : `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`});
+
+  console.log(import.meta.env.VITE_GH_PERSONAL_ACCESS_TOKEN);
+  const octo =
+      new Octokit({auth : import.meta.env.VITE_GH_PERSONAL_ACCESS_TOKEN});
   const {data : data} = await octo.request('GET /user/repos');
 
   const loadedRepos = data.filter(
