@@ -3,7 +3,7 @@
     
 </script>
 
-<nav class="mb-4 p-4 justify-center w-full">
+<nav class="p-4 justify-center w-full">
     <div>
         <div class="flex flex-row-reverse">
             <UrlAware class="navtitle" link={"/guides"} text={"Guides"} />
