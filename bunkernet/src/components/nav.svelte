@@ -1,11 +1,14 @@
-<nav class="mb-4 p-4 flex justify-center w-full border-b-4 border-cyan">
-    <div >
-        <a class="navtitle inline-block transition transform hover:rotate-90" href="/">∶)</a>
-        <a class="navtitle" href="/projects">Projects</a>
-    </div>
-    <div class="flex-1"/>
+<script>
+    import UrlAware from '../components/url-aware.svelte';
+    
+</script>
+
+<nav class="mb-4 p-4 justify-center w-full">
     <div>
-        <a class="navtitle" href="/docs">Docs</a>
-        <a class="navtitle" href="/monitor">Monitor</a>
+        <div class="flex flex-row-reverse">
+            <UrlAware class="navtitle" link={"/guides"} text={"Guides"} />
+            <UrlAware class="navtitle" link={"/projects"} text={"Projects"} />
+            <UrlAware class="navtitle" link={"/"} text={"Home"} />
+        </div>
     </div>
 </nav>

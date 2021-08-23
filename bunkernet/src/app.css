@@ -1,3 +1,27 @@
 .navtitle {
-    @apply mx-4 text-lg hover:text-cyan;
+    @apply mx-12 my-4 text-unselected text-lg hover:text-green;
+}
+
+.selected {
+    @apply dark:text-dark text-light;
+}
+
+#typewriter:after{
+    content: "█";
+    transition: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@-moz-keyframes blink{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes blink{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
