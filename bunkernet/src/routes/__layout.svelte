@@ -4,9 +4,9 @@
     import '../tailwind.css';
 </script>
 
-<div class="px-8 max-w-6xl mx-auto">
+<div class="w-5/6 mx-auto">
     <Nav/>
-    <div class="p-8">
+    <div class="px-1 pb-1 sm:px-8 sm:pb-8">
         <slot/>
     </div>
 </div>
