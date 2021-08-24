@@ -33,12 +33,18 @@ module.exports = {
         DEFAULT : '#0CF682',
         dark : '#0CF682',
       },
+      lightdark : {
+        light : '#1A1A1A',
+        DEFAULT : '#222222',
+        dark : '#DADADA',
+      },
     }
   },
   variants : {
     extend : {
       margin : ['odd, even'],
       padding : ['odd, even'],
+      flexDirection : [ 'odd', 'even' ],
     },
   },
   plugins : [],
