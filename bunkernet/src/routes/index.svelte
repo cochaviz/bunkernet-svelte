@@ -20,8 +20,8 @@
         I’m a Computer Science student who is very much into learning about anything! This is the place where I collect most interesting things I come accross, so feel free to have a look and see if there is anything that catches your eye! :)
         </p>
         <div class="w-full pt-8 flex flex-row-reverse gap-4">
-            <a target="_blank" href="https://github.com/zoharcochavi"><img class="transform hover:scale-110" src="/github_logo.png" width=32 height=32 alt="Github profile of Zohar Cochavi"/></a>
-            <a target="_blank" href="https://www.linkedin.com/in/zoharcochavi/"><img class="transform hover:scale-110" src="/linkedin_logo.png" width=32 height=32 alt="Linkedin profile of Zohar Cochavi"/></a>
+            <a target="_blank" href="https://github.com/zoharcochavi"><img class="transform hover:scale-110 w-8 sm:w-12" src="/github_logo.png" alt="Github profile of Zohar Cochavi"/></a>
+            <a target="_blank" href="https://www.linkedin.com/in/zoharcochavi/"><img class="transform hover:scale-110 w-8 sm:w-12" src="/linkedin_logo.png" alt="Linkedin profile of Zohar Cochavi"/></a>
         </div>
     </div>
 </div>
@@ -37,7 +37,7 @@
     />
     <div class="grid num-cols-1 sm:p-16">
         {#each $repos as repo}
-            <div class="flex sm:gap-16 gap-4 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-2 border-lightdark py-16">
+            <div class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-2 border-lightdark py-16">
                 <img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name}/>
                 <SlidingRepo repo={repo}/>
             </div>
