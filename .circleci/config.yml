@@ -29,7 +29,7 @@ workflows:
           filters:
             branches:
               only:
-                - develop
+                - dev
                 - master
       - publish:
           requires:
