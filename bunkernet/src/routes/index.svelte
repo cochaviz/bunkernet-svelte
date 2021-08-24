@@ -8,7 +8,7 @@
 
 <!--Home--->
 
-<div class="xl:h-96 flex flex-col justify-between border-b-2 pb-8 sm:pt-8 gap-8 border-green mx-auto mb-8">
+<div class="flex flex-col justify-between border-b-2 pb-8 sm:pt-8 gap-8 border-green mx-auto mb-8">
     <Typewriter 
         clazz={"font-semibold text-2xl md:text-5xl"}
         alt_color={"text-cyan dark:text-cyan"}
