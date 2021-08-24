@@ -12,7 +12,7 @@ jobs:
       - image: docker
     steps:
       - checkout
-      - run: docker build -t zoharcochavi/bunkernet:latest
+      - run: docker build -t zoharcochavi/bunkernet:latest .
 
 workflows:
   version: 2
