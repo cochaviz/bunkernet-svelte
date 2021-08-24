@@ -6,7 +6,6 @@
     <div>
         <div class="flex flex-row-reverse">
             <UrlAware class="navtitle" link={"/guides"} text={"Guides"} />
-            <UrlAware class="navtitle" link={"/projects"} text={"Projects"} />
             <UrlAware class="navtitle" link={"/"} text={"Home"} />
         </div>
     </div>
