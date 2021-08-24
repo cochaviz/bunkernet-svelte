@@ -79,6 +79,6 @@
     });
 </script>
 
-<div id="typewriter" class="font-mono text-2xl sm:text-5xl text-light dark:text-dark col-span-3" bind:this={typer}>
+<div id="typewriter" class="font-mono font-bold text-2xl sm:text-5xl text-light dark:text-dark col-span-3" bind:this={typer}>
     $&ensp
 </div>
