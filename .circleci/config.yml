@@ -8,11 +8,17 @@ jobs:
       - checkout
       - run: cd bunkernet && npm install && npm run build
   publish:
-    docker:
-      - image: docker
+    machine: true
     steps:
       - checkout
+      - run: |
+         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+
+      # build the application image
       - run: docker build -t zoharcochavi/bunkernet:latest .
+
+      # deploy the image
+      - run: docker push zoharcochavi/bunkernet:latest
 
 workflows:
   version: 2
