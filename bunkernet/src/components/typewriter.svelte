@@ -5,6 +5,7 @@
     export let result;
     export let clazz;
     export let alt_color;
+    export let idle = true;
 
     let resultDiv;
     let typer;
@@ -66,9 +67,13 @@
               setTimeout(type, tempTypeSpeed);
           } else {
             setTimeout(() => {
-                resultDiv.innerHTML = r;
-                resultDiv.classList += clazz + " " + alt_color;
-                nextline.classList += clazz + " flex gap-4" ;
+                if ( r !== "" ) {
+                    resultDiv.innerHTML = r;
+                    resultDiv.classList += clazz + " " + alt_color;
+                }
+                if ( idle ) {
+                    nextline.classList += clazz + " flex gap-4" ;
+                }
                 typer.id = "" ;
             }, 10 * tempTypeSpeed);
           }
