@@ -7,6 +7,6 @@
 
 <div class="py-4 grid gap-8 md:grid-cols-2 grid-cols-1">
     {#each $repos as repo}
-        <Repo repo={repo}/>
+            <Repo repo={repo}/>
     {/each}
 </div>

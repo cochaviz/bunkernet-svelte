@@ -36,7 +36,10 @@ module.exports = {
     }
   },
   variants : {
-    extend : {},
+    extend : {
+      margin : ['odd, even'],
+      padding : ['odd, even'],
+    },
   },
   plugins : [],
 }

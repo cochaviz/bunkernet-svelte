@@ -1,6 +1,5 @@
 <script>
     import UrlAware from '../components/url-aware.svelte';
-    
 </script>
 
 <nav class="p-4 justify-center w-full">

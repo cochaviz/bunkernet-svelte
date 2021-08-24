@@ -4,10 +4,10 @@
     import '../tailwind.css';
 </script>
 
-<div class="sm:max-w-7xl w-5/6 mx-auto">
+<div class="h-screen sm:max-w-7xl w-5/6 mx-auto">
     <Nav/>
-    <div class="px-1 pb-1 sm:px-8 sm:pb-8">
-        <slot/>
+    <div class="h-full px-1 pb-1 sm:px-8">
+        <slot class="h-full"/>
     </div>
 </div>
 
