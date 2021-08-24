@@ -9,7 +9,7 @@ jobs:
       - run: cd bunkernet && npm install && npm run build
   publish:
     docker:
-      - image: node
+      - image: docker
     steps:
       - checkout
       - run: docker build -t zoharcochavi/bunkernet:latest
