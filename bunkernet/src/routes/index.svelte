@@ -35,9 +35,10 @@
         command={"ls -l ~/Projects"} 
         result={`total ${$repos.length}`}
     />
-    <div class="grid num-cols-1 gap-16 p-16">
+    <div class="grid num-cols-1 sm:p-16">
         {#each $repos as repo}
-            <div class="odd:mr-auto even:ml-auto w-2/3">
+            <div class="flex sm:gap-16 gap-4 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-2 border-lightdark py-16">
+                <img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name}/>
                 <SlidingRepo repo={repo}/>
             </div>
         {/each}
