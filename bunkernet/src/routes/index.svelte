@@ -34,10 +34,11 @@
         clazz={"font-semibold text-2xl md:text-5xl"}
         command={"ls -l ~/Projects"} 
         result={`total ${$repos.length}`}
+        idle={false}
     />
     <div class="grid num-cols-1 sm:p-16">
         {#each $repos as repo}
-            <div class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-2 border-lightdark py-16">
+            <div class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-2 dark:border-gray border-gray-light py-16">
                 <img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name}/>
                 <SlidingRepo repo={repo}/>
             </div>

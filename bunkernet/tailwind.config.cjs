@@ -33,10 +33,10 @@ module.exports = {
         DEFAULT : '#0CF682',
         dark : '#0CF682',
       },
-      lightdark : {
-        light : '#1A1A1A',
+      gray : {
+        light : '#FAFAFA',
         DEFAULT : '#222222',
-        dark : '#DADADA',
+        dark : '#222222',
       },
     }
   },
