@@ -2,7 +2,7 @@
     import Typewriter from "../components/typewriter.svelte";
 </script>
 
-<div class="max-h-screen min-h-1/2 grid justify-between border-b-2 pb-16 border-green num-cols-1 num-rows-3 gap-4">
+<div class="max-h-screen min-h-1/2 grid justify-between border-b-2 pb-16 sm:p-16 border-green num-cols-1 num-rows-3 gap-4">
     <Typewriter 
         command={"echo \"Hey, my name is $USER\\!\""} 
         result={"Hey, my name is Zohar!"}
