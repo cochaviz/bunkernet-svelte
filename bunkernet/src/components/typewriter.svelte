@@ -3,7 +3,12 @@
 
     export let command;
     export let result;
-    export let inhclass;
+    export let clazz;
+    export let alt_color;
+
+    let resultDiv;
+    let typer;
+    let nextline;
 
     function setupTypewriter(t, c, r) {
       var HTML = c
@@ -61,8 +66,10 @@
               setTimeout(type, tempTypeSpeed);
           } else {
             setTimeout(() => {
-                t.innerHTML = r + "<br>";
-                t.classList += ["text-cyan dark:text-cyan"];
+                resultDiv.innerHTML = r;
+                resultDiv.classList += clazz + " " + alt_color;
+                nextline.classList += clazz + " flex gap-4" ;
+                typer.id = "" ;
             }, 10 * tempTypeSpeed);
           }
       };
@@ -71,7 +78,6 @@
           type: type
       };
     }
-    let typer;
 
     onMount(() => {
         typewriter = setupTypewriter(typer, command, result);
@@ -79,6 +85,14 @@
     });
 </script>
 
-<div id="typewriter" class="font-mono font-bold text-2xl sm:text-5xl text-light dark:text-dark col-span-3" bind:this={typer}>
-    $&ensp
+<div class={clazz + " grid font-mono gap-2 sm:gap-8 auto-rows-auto"}>
+    <div class={clazz + " flex"}>
+        <div class="pr-6">$</div>
+        <div id="typewriter" bind:this={typer}/>
+    </div>
+    <div class={"invisible"} bind:this={resultDiv}>{result}</div>
+    <div bind:this={nextline} class="invisible">
+        <div class="pr-6">$</div>
+        <div id="typewriter"/>
+    </div>
 </div>

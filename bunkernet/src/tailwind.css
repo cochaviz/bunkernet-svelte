@@ -4,6 +4,6 @@
 
 @layer base {
     p {
-        @apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-medium;
+        @apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-normal tracking-wide;
     }
 }

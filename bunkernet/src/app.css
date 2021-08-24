@@ -1,5 +1,5 @@
 .navtitle {
-    @apply mx-auto sm:mx-12 my-4 text-unselected text-lg hover:text-green;
+    @apply mx-auto sm:mx-12 my-4 text-unselected text-lg sm:hover:text-green;
 }
 
 .selected {
@@ -8,20 +8,14 @@
 
 #typewriter:after{
     content: "█";
-    transition: blink 500ms linear infinite alternate;
-}
-
-@-webkit-keyframes blink{
-  0%{opacity: 0;}
-  100%{opacity: 1;}
-}
-
-@-moz-keyframes blink{
-  0%{opacity: 0;}
-  100%{opacity: 1;}
+    animation: blink 1500ms steps(1, end) infinite;
 }
 
 @keyframes blink{
-  0%{opacity: 0;}
-  100%{opacity: 1;}
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
