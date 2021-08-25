@@ -6,6 +6,16 @@
     @apply dark:text-dark text-light;
 }
 
+#Home {
+    height: 85%;
+}
+
+@media only screen and (min-width: 1280px) { 
+    #Home {
+        height: 90%;
+    }
+}
+
 #typewriter:after{
     content: "█";
     animation: blink 1500ms steps(1, end) infinite;

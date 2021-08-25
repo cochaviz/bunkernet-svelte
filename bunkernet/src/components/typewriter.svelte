@@ -75,7 +75,7 @@
                     nextline.classList += clazz + " flex gap-4" ;
                 }
                 typer.id = "" ;
-            }, 10 * tempTypeSpeed);
+            }, 3 * tempTypeSpeed);
           }
       };
 
