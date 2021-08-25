@@ -4,6 +4,8 @@
     import {repos, fetchRepos} from "../repostore"
 
     fetchRepos(['dotfiles', 'BattleDucks', 'gopy', 'wikiscraper', 'dotfield', 'music-bot-family']);
+
+    $: numRepos = $repos.length
 </script>
 
 <!--Home--->
@@ -33,7 +35,7 @@
         alt_color={"text-green dark:text-green"}
         clazz={"font-semibold text-2xl md:text-5xl"}
         command={"ls -l ~/Projects"} 
-        result={`total ${$repos.length}`}
+        result={`total ${numRepos}`}
         idle={false}
     />
     <div class="grid num-cols-1 sm:p-16">
