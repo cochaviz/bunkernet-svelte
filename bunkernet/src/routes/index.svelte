@@ -1,11 +1,14 @@
 <script>	
     import Typewriter from "../components/typewriter.svelte";
     import SlidingRepo from "../components/sliding-repo.svelte";
-    import {repos, fetchRepos} from "../repostore"
+    import {repos, fetchRepos} from "../repostore";
+    import {onMount} from "svelte";
 
-    fetchRepos(['dotfiles', 'BattleDucks', 'gopy', 'wikiscraper', 'dotfield', 'music-bot-family']);
+    onMount(() => {
+        fetchRepos();
+    });
 
-    $: numRepos = $repos.length
+    $: numRepos = $repos.length;
 </script>
 
 <!--Home--->
