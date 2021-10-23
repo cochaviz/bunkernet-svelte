@@ -22,7 +22,7 @@
             result={"Hi, my name is Zohar!"}
         />
         <p class="sm:px-16 lg:w-4/5">
-        I’m a Computer Science student who is very much into learning about anything! This is the place where I collect most interesting things I come across, so feel free to have a look and see if there is anything that catches your eye! :)
+        "I’m a Computer Science student who is very much into learning about anything! This is the place where I collect most interesting things I come across, so feel free to have a look and see if there is anything that catches your eye! :)"
         </p>
     </div>
     <div class="w-full lg:px-16 sm:pb-8 flex flex-row-reverse gap-4">

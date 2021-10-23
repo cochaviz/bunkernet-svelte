@@ -4,3 +4,4 @@ bunkernet/build
 bunkernet/.svelte-kit
 bunkernet/package
 bunkernet/.env.local
+bunkernet/.env
