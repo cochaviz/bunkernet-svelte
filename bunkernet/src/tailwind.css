@@ -3,7 +3,58 @@
 @tailwind utilities;
 
 @layer base {
+
+    h1::before {
+        content: "-- "
+    }
+
+    h1::after {
+        content: " --"
+    }
+
+    h1 {
+        @apply text-green font-mono text-4xl font-bold my-8 text-center;
+    }
+
+    h2 {
+        @apply text-green font-mono text-2xl font-bold mt-8 mb-4;
+    }
+
+    h3 {
+        @apply text-green font-mono text-xl font-bold mt-8 mb-2;
+    }
+
     p {
         @apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-medium tracking-wide;
     }
+
+    pre {
+        @apply bg-graycode m-3 p-6 rounded-md;
+        white-space: pre-wrap;
+    }
+
+    pre::before {
+        counter-reset: listing;
+    }
+
+    code {
+        @apply font-mono;
+    }
+
+    ul {
+        @apply m-4
+    }
+
+    .section-number {
+        @apply pr-2 text-lg;
+    }
+
+    li {
+        @apply text-lg;
+    }
+
+    a {
+        @apply hover:text-green underline;
+    }
+
 }
