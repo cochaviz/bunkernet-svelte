@@ -4,13 +4,11 @@ import path from "path";
 
 function matchOrgBang(string, bang) {
     let reg = new RegExp(`#\+${bang}:.*`, 'g')
-    console.log(string);
     return string.match(reg);
 }
 
 function readTags(string) {
     let matchedLine = string.match(/#\+TAGS:.*/g);
-    console.log(matchedLine);
 
     if (matchedLine != null) {
         let groups = matchedLine[0].match(/@\w+/g);
@@ -24,7 +22,6 @@ function readDate(string) {
 
     if  (matchedLine != null) {
         let date = matchedLine[0].match(/<.*?>/g);
-        console.log(date);
         return date;
     }
 }

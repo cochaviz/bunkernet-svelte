@@ -27,3 +27,4 @@
 </script>
 
 <org>{@html post}</org>
+<div class="m-8 sm:m-16"></div>

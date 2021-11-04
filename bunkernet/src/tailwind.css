@@ -5,23 +5,19 @@
 @layer base {
 
     h1::before {
-        content: "-- "
-    }
-
-    h1::after {
-        content: " --"
+        content: "> ";
     }
 
     h1 {
-        @apply text-green font-mono sm:text-4xl font-bold my-8 text-center;
+        @apply text-green font-mono text-2xl sm:text-4xl font-bold my-12 sm:text-center;
     }
 
     h2 {
-        @apply text-green font-mono text-2xl font-bold mt-8 mb-4;
+        @apply text-green font-mono text-xl sm:text-2xl font-bold mt-10 mb-4;
     }
 
     h3 {
-        @apply text-green font-mono text-xl font-bold mt-8 mb-2;
+        @apply text-green font-mono text-lg sm:text-xl font-bold mt-8 mb-2;
     }
 
     p {
@@ -45,16 +41,24 @@
         @apply m-6;
     }
 
+    .section-number::before {
+        content: "[";
+    }
+
+    .section-number::after {
+        content: "]";
+    }
+
     .section-number {
-        @apply pr-2 text-lg;
+        @apply pr-2 text-sm sm:text-lg;
     }
 
     li {
-        @apply text-lg mt-2;
+        @apply sm:text-lg mt-2;
     }
 
     a {
-        @apply hover:text-green underline;
+        @apply hover:text-green;
     }
 
 }

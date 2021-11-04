@@ -1,0 +1,36 @@
+#+TITLE: My First Post
+#+DATE: <2021-11-04 do>
+#+TAGS: @one @two @three
+
+* Introduction
+
+Just finished setting up this small blog system, so I hope you can see this and everything works as it should.
+
+While there is still a lot to do, it's nice to have something tangible to build on top of.
+Talking about a lot to do, let's talk about what is currently not yet possible!
+
+* Improvements
+
+The aim of this document is to not make sense at all. Since, by the time you're reading this, I've hopefully implemented all the new features.
+
+** Code highlighting
+
+Firstly, code highlighting is not a thing yet
+
+#+begin_src python :export both :results output
+def main():
+    print("As you can see from this python function")
+
+main()
+#+end_src
+
+#+RESULTS:
+: As you can see from this python function
+
+** LaTeX rendering
+
+$\LaTeX$ also does not render yet, as demonstrated by this ugly thing:
+
+\begin{equation}
+\fract{\partial \phi}{\partial t} = \theta_1 \cdot cos(\phi)^2
+\end{equation}

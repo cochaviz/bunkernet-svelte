@@ -14,7 +14,7 @@
 
 <!--Blog--->
 
-<div id="Posts" class="h-screen flex flex-col justify-around pb-8 gap-8 mx-auto mb-8">
+<div id="Posts" class="flex-col justify-around py-16 sm:py-32 gap-8 mx-auto mb-8">
     <div class="h-full flex flex-col justify-evenly">
         <Typewriter
             clazz={"font-semibold text-2xl md:text-5xl"}
@@ -23,12 +23,12 @@
             result={`total ${numPosts}`}
         />
     </div>
+</div>
 
-    <!--List of posts-->
+<!--List of posts-->
 
-    <div class="grid num-cols-2 sm:p-16">
-        {#each $posts as post}
-            <PostPreview post={post}/>
-        {/each}
-    </div>
+<div class="grid gap-4 sm:px-16 pb-16">
+    {#each $posts as post}
+        <PostPreview post={post}/>
+    {/each}
 </div>
