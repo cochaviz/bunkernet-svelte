@@ -1,5 +1,13 @@
 import fs from "fs";
 import org from "org";
+import { parse } from "node-html-parser";
+
+async function parseLatex(string) {
+  return "OI";
+}
+
+async function asyncAssign(elements) {
+}
 
 async function getPostHTML(postid) {
   // Get post
@@ -15,6 +23,15 @@ async function getPostHTML(postid) {
       suppressSubScriptHandling: false,
       suppressAutoLink: false
   });
+
+  // Process latex
+  let content = parse(orgHTMLDocument.contentHTML);
+
+  for (const el in content.getElementsByTagName('p')) {
+    if(el.childNodes != null) {
+      el.childNodes[0]['_rawText'] = await parseLatex(el.childNodes[0]._rawText);
+    }
+  }
   return orgHTMLDocument.toString();
 }
 

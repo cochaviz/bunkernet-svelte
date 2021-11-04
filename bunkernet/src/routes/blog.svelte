@@ -12,7 +12,7 @@
     $: numPosts = $posts.length;
 </script>
 
-<!--Home--->
+<!--Blog--->
 
 <div id="Posts" class="h-screen flex flex-col justify-around pb-8 gap-8 mx-auto mb-8">
     <div class="h-full flex flex-col justify-evenly">
@@ -23,6 +23,9 @@
             result={`total ${numPosts}`}
         />
     </div>
+
+    <!--List of posts-->
+
     <div class="grid num-cols-2 sm:p-16">
         {#each $posts as post}
             <PostPreview post={post}/>

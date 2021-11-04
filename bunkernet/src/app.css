@@ -1,5 +1,5 @@
 .navtitle {
-    @apply mx-auto sm:mx-12 my-4 text-unselected text-lg sm:hover:text-green;
+    @apply no-underline mx-auto sm:mx-12 my-4 text-unselected text-lg sm:hover:text-green;
 }
 
 .selected {

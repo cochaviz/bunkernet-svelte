@@ -13,7 +13,7 @@
     }
 
     h1 {
-        @apply text-green font-mono text-4xl font-bold my-8 text-center;
+        @apply text-green font-mono sm:text-4xl font-bold my-8 text-center;
     }
 
     h2 {
@@ -28,13 +28,13 @@
         @apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-medium tracking-wide;
     }
 
+    org > p {
+        @apply font-sans text-sm sm:text-lg font-medium mb-4;
+    }
+
     pre {
         @apply bg-graycode m-3 p-6 rounded-md;
         white-space: pre-wrap;
-    }
-
-    pre::before {
-        counter-reset: listing;
     }
 
     code {
@@ -42,7 +42,7 @@
     }
 
     ul {
-        @apply m-4
+        @apply m-6;
     }
 
     .section-number {
@@ -50,7 +50,7 @@
     }
 
     li {
-        @apply text-lg;
+        @apply text-lg mt-2;
     }
 
     a {

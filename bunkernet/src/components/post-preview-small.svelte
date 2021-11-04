@@ -2,11 +2,14 @@
     export let post;
 </script>
 
-<a class="list-none p-6 bg-gray-100 text-center rounded-md hover:border-cyan flex flex-col items-center border-2 border-white" href={`${post.url}`}>
-    <h2 class="uppercase text-2xl">{post.title}</h2>
-    <ul>
+<a class="no-underline list-none p-6 rounded-md hover:bg-gray" href={`/blog/${post.postid}`}>
+    <h2 class="hover:underline uppercase text-2xl text-left m-2">> {post.title}</h2>
+    <h3 class="text-dark m-2">{post.date}</h3>
+    <div class="flex">
         {#each post.tags as tag}
-            <li>{tag}</li>
+        <p class="mx-2 text-lg text-unselected">
+            #{tag}
+        </p>
         {/each}
-    </ul>
+    </div>
 </a>
