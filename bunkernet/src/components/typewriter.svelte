@@ -85,7 +85,7 @@
     }
 
     onMount(() => {
-        typewriter = setupTypewriter(typer, command, result);
+        let typewriter = setupTypewriter(typer, command, result);
         typewriter.type();
     });
 </script>

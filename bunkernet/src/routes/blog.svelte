@@ -7,8 +7,6 @@
     onMount(() => {
         fetchPosts();
     });
-    console.log($posts);
-
     $: numPosts = $posts.length;
 </script>
 

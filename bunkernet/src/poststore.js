@@ -13,7 +13,6 @@ export const fetchPosts = async () => {
   const response = await fetch(`/blog/all.json`)
   const {posts : loadedPosts} = await response.json();
 
-  print(loadedPosts);
   posts.set(loadedPosts);
   loaded = true;
 };
