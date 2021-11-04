@@ -23,7 +23,13 @@
 </script>
 
 <script>
-    export let post;
+ import hljs from 'highlight.js';
+ import {onMount} from "svelte";
+
+ export let post;
+ onMount(() => {
+     hljs.highlightAll();
+ });
 </script>
 
 <org>{@html post}</org>

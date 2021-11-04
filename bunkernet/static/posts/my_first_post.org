@@ -1,6 +1,6 @@
 #+TITLE: My First Post
 #+DATE: <2021-11-04 do>
-#+TAGS: @one @two @three
+#+TAGS: @first @smthelse
 
 * Introduction
 
@@ -19,13 +19,13 @@ Firstly, code highlighting is not a thing yet
 
 #+begin_src python :export both :results output
 def main():
-    print("As you can see from this python function")
+    print("New code!")
 
 main()
 #+end_src
 
 #+RESULTS:
-: As you can see from this python function
+: New code!
 
 ** LaTeX rendering
 

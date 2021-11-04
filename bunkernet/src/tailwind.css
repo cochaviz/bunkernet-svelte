@@ -28,15 +28,6 @@
         @apply font-sans text-sm sm:text-lg font-medium mb-4;
     }
 
-    pre {
-        @apply bg-graycode m-3 p-6 rounded-md;
-        white-space: pre-wrap;
-    }
-
-    code {
-        @apply font-mono;
-    }
-
     ul {
         @apply m-6;
     }
