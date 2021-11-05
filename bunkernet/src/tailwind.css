@@ -27,15 +27,11 @@
     /* Most of this is done for formatting the org-mode parsing results for the blog */
 
     org > p {
-        @apply font-sans text-sm sm:text-lg font-medium mb-4;
+        @apply font-sans text-sm sm:text-lg font-medium sm:mx-4 mb-4;
     }
 
     ul {
         @apply m-6;
-    }
-
-    pre {
-        @apply mx-4 mt-6 p-8 bg-graycode rounded-md;
     }
 
     li {
@@ -47,7 +43,7 @@
     }
 
     .section-number {
-        @apply pr-2 text-sm sm:text-lg;
+        @apply font-mono pr-2 text-sm sm:text-lg text-unselected font-medium;
     }
 
     .section-number::before {
@@ -59,7 +55,21 @@
     }
 
     /* Override KaTeX rendering settings -> defaults to black */
+
     span.mord {
         @apply dark:text-dark text-light;
     }
+
+    /* Override the highlight.js rendering settings */
+
+    pre {
+        @apply sm:mx-4 mt-6 p-4 sm:p-6 bg-graycode rounded-lg text-sm sm:text-base;
+        overflow-x: scroll;
+    }
+
+    code.hljs {
+        /* Fixes apparant newline at the end of code-block */
+        display: contents;
+    }
+
 }
