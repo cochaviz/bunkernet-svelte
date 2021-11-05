@@ -36,5 +36,5 @@
  });
 </script>
 
-<org id="org">{@html post}</org>
+<div class="max-w-5xl mx-auto" id="org">{@html post}</div>
 <div class="m-8 sm:m-16"></div>

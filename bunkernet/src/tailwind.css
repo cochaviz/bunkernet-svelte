@@ -26,7 +26,7 @@
 
     /* Most of this is done for formatting the org-mode parsing results for the blog */
 
-    org > p {
+    #org > p {
         @apply font-sans text-sm sm:text-lg font-medium sm:mx-4 mb-4;
     }
 
