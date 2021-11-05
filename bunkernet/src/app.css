@@ -45,10 +45,6 @@
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 1.0em;
-  padding-left: 2.0em;
-  border-radius: 10px;
-  border-width: 0px;
 }
 
 .hljs-built_in,

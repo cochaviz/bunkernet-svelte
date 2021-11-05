@@ -41,8 +41,8 @@ module.exports = {
       },
       graycode : {
         light : '#DADADA',
-        DEFAULT : '#444444',
-        dark : '#444444',
+        DEFAULT : '#222222',
+        dark : '#222222',
       },
     }
   },

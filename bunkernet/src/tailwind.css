@@ -24,6 +24,8 @@
         @apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-medium tracking-wide;
     }
 
+    /* Most of this is done for formatting the org-mode parsing results for the blog */
+
     org > p {
         @apply font-sans text-sm sm:text-lg font-medium mb-4;
     }
@@ -32,16 +34,8 @@
         @apply m-6;
     }
 
-    .section-number::before {
-        content: "[";
-    }
-
-    .section-number::after {
-        content: "]";
-    }
-
-    .section-number {
-        @apply pr-2 text-sm sm:text-lg;
+    pre {
+        @apply mx-4 mt-6 p-8 bg-graycode rounded-md;
     }
 
     li {
@@ -52,4 +46,20 @@
         @apply hover:text-green;
     }
 
+    .section-number {
+        @apply pr-2 text-sm sm:text-lg;
+    }
+
+    .section-number::before {
+        content: "[";
+    }
+
+    .section-number::after {
+        content: "]";
+    }
+
+    /* Override KaTeX rendering settings -> defaults to black */
+    span.mord {
+        @apply dark:text-dark text-light;
+    }
 }

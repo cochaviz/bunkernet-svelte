@@ -31,6 +31,10 @@ main()
 
 $\LaTeX$ also does not render yet, as demonstrated by this ugly thing:
 
-\begin{equation}
-\fract{\partial \phi}{\partial t} = \theta_1 \cdot cos(\phi)^2
-\end{equation}
+$$ \begin{equation}
+\frac{\partial \phi}{\partial t} = \theta_1 \cdot \cos^2( \phi)
+\end{equation} $$
+
+And how about this?
+
+$$ \text{Wooo, I'm so ugly } \Rrightarrow $$

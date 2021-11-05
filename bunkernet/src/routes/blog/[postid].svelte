@@ -25,12 +25,16 @@
 <script>
  import hljs from 'highlight.js';
  import {onMount} from "svelte";
+ import katex from 'katex';
 
  export let post;
+
+
  onMount(() => {
-     hljs.highlightAll();
+    hljs.highlightAll();
+    renderLatex();
  });
 </script>
 
-<org>{@html post}</org>
+<org id="org">{@html post}</org>
 <div class="m-8 sm:m-16"></div>
