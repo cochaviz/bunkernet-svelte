@@ -1,0 +1,40 @@
+#+TITLE: My First Post
+#+DATE: <2021-11-04 do>
+#+TAGS: @first @smthelse
+
+* Introduction
+
+Just finished setting up this small blog system, so I hope you can see this and everything works as it should.
+
+While there is still a lot to do, it's nice to have something tangible to build on top of.
+Talking about a lot to do, let's talk about what is currently not yet possible!
+
+* Improvements
+
+The aim of this document is to not make sense at all. Since, by the time you're reading this, I've hopefully implemented all the new features.
+
+** Code highlighting
+
+Firstly, code highlighting is not a thing yet
+
+#+begin_src python :export both :results output
+def main():
+    print("C'est ne pas une pipe")
+
+main()
+#+end_src
+
+#+RESULTS:
+: C'est ne pas une pipe
+
+** LaTeX rendering
+
+$\LaTeX$ also does not render yet, as demonstrated by this ugly thing:
+
+$$ \text{Wooo, I'm so ugly } \Rrightarrow $$
+
+And how about this?
+
+$$ \begin{equation}
+\frac{\partial \phi}{\partial t} = \theta_1 \cdot \cos^2( \phi)
+\end{equation} $$

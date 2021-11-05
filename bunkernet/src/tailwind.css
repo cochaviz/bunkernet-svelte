@@ -3,7 +3,73 @@
 @tailwind utilities;
 
 @layer base {
+
+    h1::before {
+        content: "> ";
+    }
+
+    h1 {
+        @apply text-green font-mono text-2xl sm:text-4xl font-bold my-12 sm:text-center;
+    }
+
+    h2 {
+        @apply text-green font-mono text-xl sm:text-2xl font-bold mt-10 mb-4;
+    }
+
+    h3 {
+        @apply text-green font-mono text-lg sm:text-xl font-bold mt-8 mb-2;
+    }
+
     p {
         @apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-medium tracking-wide;
     }
+
+    /* Most of this is done for formatting the org-mode parsing results for the blog */
+
+    #org > p {
+        @apply font-sans text-sm sm:text-lg font-medium sm:mx-4 mb-4;
+    }
+
+    ul {
+        @apply m-6;
+    }
+
+    li {
+        @apply sm:text-lg mt-2;
+    }
+
+    a {
+        @apply hover:text-green;
+    }
+
+    .section-number {
+        @apply font-mono pr-2 text-sm sm:text-lg text-unselected font-medium;
+    }
+
+    .section-number::before {
+        content: "[";
+    }
+
+    .section-number::after {
+        content: "]";
+    }
+
+    /* Override KaTeX rendering settings -> defaults to black */
+
+    span.mord {
+        @apply dark:text-dark text-light;
+    }
+
+    /* Override the highlight.js rendering settings */
+
+    pre {
+        @apply sm:mx-4 mt-6 p-4 sm:p-6 bg-graycode rounded-lg text-sm sm:text-base;
+        overflow-x: scroll;
+    }
+
+    code.hljs {
+        /* Fixes apparant newline at the end of code-block */
+        display: contents;
+    }
+
 }

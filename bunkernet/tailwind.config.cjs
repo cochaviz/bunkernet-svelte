@@ -6,6 +6,7 @@ module.exports = {
       'mono' : ['"Fira Code"'],
       'sans' : ['"Lato"'],
     },
+
     extend : {},
     textColor : {
       light : '#000000',
@@ -38,6 +39,11 @@ module.exports = {
         DEFAULT : '#222222',
         dark : '#222222',
       },
+      graycode : {
+        light : '#DADADA',
+        DEFAULT : '#222222',
+        dark : '#222222',
+      },
     }
   },
   variants : {
@@ -47,5 +53,5 @@ module.exports = {
       flexDirection : [ 'odd', 'even' ],
     },
   },
-  plugins : [],
+  plugins: [],
 }

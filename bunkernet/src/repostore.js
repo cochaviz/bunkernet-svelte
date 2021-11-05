@@ -7,8 +7,7 @@ export const fetchRepos = async (host) => {
   if (loaded) {
     return;
   }
-  console.log(host);
-  const response = await fetch(`http://localhost:3000/data/repos.json`)
+  const response = await fetch(`/repos.json`)
   const {repos : loadedRepos} = await response.json();
 
   repos.set(loadedRepos);
