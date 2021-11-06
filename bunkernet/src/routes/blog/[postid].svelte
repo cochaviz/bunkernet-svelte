@@ -23,16 +23,37 @@
 </script>
 
 <script>
+ import { onMount } from "svelte";
+ import CopyButton from "../../components/copy-button.svelte";
  import hljs from 'highlight.js';
- import {onMount} from "svelte";
  import katex from 'katex';
 
  export let post;
 
-
  onMount(() => {
     hljs.highlightAll();
-    renderLatex();
+    renderLatex(); // This function is defined in app.html
+
+    // Buttons in code blocks
+    let pres = document.getElementsByTagName("pre");
+
+    for (const pre in pres) {
+        const preDiv = document.createElement("div");
+        preDiv.setAttribute("class", "copy_button_container");
+
+        const preCopy = pres[pre];
+
+        pres[pre].replaceWith(preDiv);
+        preDiv.appendChild(preCopy);
+
+        const button = new CopyButton({
+            target: preCopy,
+            anchor: null,
+            props: {
+                parent: preCopy,
+            },
+        });
+    }
  });
 </script>
 
