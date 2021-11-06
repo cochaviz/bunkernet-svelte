@@ -26,8 +26,8 @@
         </p>
     </div>
     <div class="w-full lg:px-16 sm:pb-8 flex flex-row-reverse gap-4">
-        <a target="_blank" href="https://github.com/zoharcochavi"><img class="transform hover:scale-110 w-8 sm:w-12" src="/github_logo.png" alt="Github profile of Zohar Cochavi"/></a>
-        <a target="_blank" href="https://www.linkedin.com/in/zoharcochavi/"><img class="transform hover:scale-110 w-8 sm:w-12" src="/linkedin_logo.png" alt="Linkedin profile of Zohar Cochavi"/></a>
+        <a target="_blank" href="https://github.com/zoharcochavi"><img class="transition transform hover:scale-110 w-8 sm:w-12" src="/github_logo.png" alt="Github profile of Zohar Cochavi"/></a>
+        <a target="_blank" href="https://www.linkedin.com/in/zoharcochavi/"><img class="transition transform hover:scale-110 w-8 sm:w-12" src="/linkedin_logo.png" alt="Linkedin profile of Zohar Cochavi"/></a>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
     />
     <div class="grid num-cols-1 sm:p-16">
         {#each $repos as repo}
-            <div class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-2 dark:border-gray border-gray-light py-16 sm:py-64">
+            <div class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 border-dashed dark:border-gray border-gray-light py-16 sm:py-64">
                 <img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name}/>
                 <SlidingRepo repo={repo}/>
             </div>

@@ -30,6 +30,14 @@
         @apply font-sans text-sm sm:text-lg font-medium sm:mx-4 mb-4;
     }
 
+    span.todo {
+        @apply text-red pr-4;
+    }
+
+    blockquote > p {
+        @apply border-l-4 pl-4 font-sans text-sm sm:text-lg font-medium text-unselected sm:mx-4 mb-4;
+    }
+
     ul {
         @apply m-6;
     }
@@ -39,7 +47,8 @@
     }
 
     a {
-        @apply hover:text-green;
+        @apply hover:text-green active:scale-90;
+        transition: all .15s;
     }
 
     .section-number {
@@ -54,6 +63,40 @@
         content: "]";
     }
 
+    .copy_button_container {
+        position: relative;
+    }
+
+    .copy_button_container:hover .copy_button {
+        opacity: 1.0;
+    }
+
+    @media (hover: hover) {
+        .copy_button {
+            opacity: 0.3;
+        }
+    }
+
+    .copy_button {
+        @apply z-50 rounded-lg m-4 sm:mx-8 w-9 h-9 bg-background object-center shadow-md border-0;
+        transition: all .15s;
+        right: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    .copy_button > img {
+        @apply w-3/5 mx-auto filter invert;
+    }
+
+    .copy_button:hover {
+        transform: scale(1.1);
+    }
+
+    .copy_button:active {
+        transform: scale(0.98);
+    }
+
     /* Override KaTeX rendering settings -> defaults to black */
 
     span.mord {
@@ -63,8 +106,8 @@
     /* Override the highlight.js rendering settings */
 
     pre {
-        @apply sm:mx-4 mt-6 p-4 sm:p-6 bg-graycode rounded-lg text-sm sm:text-base;
-        overflow-x: scroll;
+        @apply h-auto sm:mx-4 my-3 p-4 sm:p-6 bg-graycode rounded-lg text-sm sm:text-base border-0;
+        overflow-x: auto;
     }
 
     code.hljs {
