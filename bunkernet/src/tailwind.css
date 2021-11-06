@@ -47,7 +47,8 @@
     }
 
     a {
-        @apply hover:text-green;
+        @apply hover:text-green active:scale-90;
+        transition: all .15s;
     }
 
     .section-number {
@@ -70,10 +71,15 @@
         opacity: 1.0;
     }
 
+    @media (hover: hover) {
+        .copy_button {
+            opacity: 0.3;
+        }
+    }
+
     .copy_button {
-        @apply z-50 rounded-lg m-4 mx-8 w-9 h-9 bg-background object-center shadow-md border-0;
-        transition: all .2s;
-        opacity: 0.3;
+        @apply z-50 rounded-lg m-4 sm:mx-8 w-9 h-9 bg-background object-center shadow-md border-0;
+        transition: all .15s;
         right: 0;
         top: 0;
         position: absolute;

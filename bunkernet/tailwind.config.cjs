@@ -57,6 +57,7 @@ module.exports = {
       margin : ['odd, even'],
       padding : ['odd, even'],
       flexDirection : [ 'odd', 'even' ],
+      scale: ['active', 'group-hover'],
     },
   },
   plugins: [],
