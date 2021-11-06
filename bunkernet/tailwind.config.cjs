@@ -7,7 +7,11 @@ module.exports = {
       'sans' : ['"Lato"'],
     },
 
-    extend : {},
+    extend : {
+      backgroundImage: {
+        'copy-img': "url('/copy.png')",
+      }
+    },
     textColor : {
       light : '#000000',
       DEFAULT : '#000000',
@@ -15,13 +19,15 @@ module.exports = {
       cyan : '#26E1FA',
       unselected : "#787878",
       green : '#0CF682',
+      red : '#cc2222'
     },
     colors : {
       transparent : 'transparent',
       current : 'currentColor',
+      unselected : "#787878",
       background : {
         light : '#ffffff',
-        DEFAULT : '#ffffff',
+        DEFAULT : '#1A1A1A',
         dark : '#1A1A1A',
       },
       cyan : {
