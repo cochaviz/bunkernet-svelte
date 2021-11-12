@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Fira Code -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+            
+
+		
+
+		<link rel="modulepreload" href="/_app/start-553adbf8.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-a4d1f3d1.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-325f7276.js">
+		<link rel="modulepreload" href="/_app/pages/blog.svelte-6492790c.js">
+		<link rel="modulepreload" href="/_app/chunks/typewriter-4afc9af2.js">
+		<link rel="stylesheet" href="/_app/assets/start-8077b9bf.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-72b630f9.css">
+
+		<script type="module">
+			import { start } from "/_app/start-553adbf8.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-325f7276.js"),
+						import("/_app/pages/blog.svelte-6492790c.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/blog",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+
+        <!-- KaTeX -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+
+        <script>
+         function renderLatex() {
+                renderMathInElement(document.getElementById("org"), {
+                    // customised options
+                    // • auto-render specific keys, e.g.:
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ],
+                    // • rendering keys, e.g.:
+                    throwOnError : false
+                });
+            };
+        </script>
+    </head>
+    <body class="bg-background dark:bg-background-dark text-light dark:text-dark">
+        <div id="svelte">
+
+
+<div class="h-screen sm:max-w-7xl w-5/6 mx-auto"><nav class="p-4 justify-center w-full"><div><div class="flex flex-row-reverse"><a class="navtitle selected" href="/blog">$BLOG</a>
+            <a class="navtitle" href="/">$HOME</a></div></div></nav>
+    <div class="h-full px-1 pb-1 sm:px-8">
+
+<div id="Posts" class="flex-col justify-around py-16 sm:py-32 gap-8 mx-auto mb-8"><div class="h-full flex flex-col justify-evenly"><div class="font-semibold text-2xl md:text-5xl grid font-mono gap-2 sm:gap-8 auto-rows-auto"><div class="font-semibold text-2xl md:text-5xl flex"><div class="pr-6">$</div>
+        <div id="typewriter"></div></div>
+    <div class="invisible">total 0</div>
+    <div class="invisible"><div class="pr-6">$</div>
+        <div id="typewriter"></div></div></div></div></div>
+
+
+
+<div class="grid gap-4 sm:px-16 pb-16"></div></div></div>
+
+
+
+	
+</div>
+    </body>
+</html>

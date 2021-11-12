@@ -1,0 +1,59 @@
+#+TITLE: My First Post
+#+DATE: <2021-11-04 do>
+#+TAGS: @first @smthelse
+
+* Introduction
+
+Just finished setting up this small blog system, so I hope you can see this and everything works as it should. And while there is still a lot to do, it's nice to have something tangible to build on top of.
+
+** TODO All Hail Org-mode
+
+Something about how cool org-mode is.
+
+* Improvements
+
+The aim of this document is to not make sense at all. Since, by the time you're reading this, I've hopefully implemented all the new features.
+
+** Code highlighting
+
+Firstly, code highlighting is not a thing yet
+
+#+begin_src python :export both :results output
+def main():
+    print("A very long line in order to show what happens if the there is more code than space on the screen")
+
+main()
+#+end_src
+
+#+RESULTS:
+: A very long line in order to show what happens if the there is more code than space on the screen
+
+#+begin_quote
+It would be really cool if you could just copy the code with a button.
+All right, I'll make it work, just hold on a second...
+#+end_quote
+
+** LaTeX rendering
+
+$\LaTeX$ also does not render yet, as demonstrated by this ugly thing:
+
+$$  \Rrightarrow \text{Wooo, I'm so ugly } $$
+
+Quick, cover your eyes!
+
+$$ \begin{equation}
+\frac{\partial \phi}{\partial t} = \theta_1 \cdot \cos^2( \phi)
+\end{equation} $$
+
+** Pictures
+
+Maybe this will work right away!
+
+#+BEGIN_QUOTE
+Zohar from the future he actaully ran this... it doesn't (of course)
+#+END_QUOTE
+
+#+CAPTION: Above you should see a picture, and this should be visible text
+#+LABEL: fig:example
+#+attr_html :width 100
+[[/BattleDucks.png]]
