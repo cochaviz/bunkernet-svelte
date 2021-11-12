@@ -13,8 +13,8 @@ const config = {
         // env : {host : 'HOST', port : 'PORT'}
       // }),
       adapterStatic({
-        pages : 'static-build',
-        assets : 'static-build',
+        pages : 'build',
+        assets : 'build',
         fallback : null
       }),
     // ]
