@@ -9,9 +9,5 @@ ENV HOST=0.0.0.0
 RUN cd /tmp/bunkernet && \
     npm install && \
     npm run build && \
-    mkdir -p /var/www/app && \
-    mv * /var/www/app/
-
-# Run
-CMD cd /var/www/app && node build/index.js --host
-
+    mkdir -p /var/www/html && \
+    mv build/* /var/www/html/
