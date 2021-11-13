@@ -1,4 +1,5 @@
-import {writable} from 'svelte/store';
+import fetch from 'node-fetch';
+import { writable } from 'svelte/store';
 
 export const repos = writable([]);
 let loaded = false;
