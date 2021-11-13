@@ -32,7 +32,7 @@
     "highlight.js": "^11.3.1",
     "katex": "^0.15.1",
     "latex.js": "^0.12.4",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^2.6.1",
     "node-html-parser": "^5.1.0",
     "octokit": "^1.4.0",
     "org": "^0.2.0",
