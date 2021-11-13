@@ -1,6 +1,7 @@
 bunkernet/.DS_Store
 bunkernet/node_modules
 bunkernet/build
+bunkernet/functions
 bunkernet/.svelte-kit
 bunkernet/package
 bunkernet/.env.local

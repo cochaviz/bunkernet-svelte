@@ -1,6 +1,7 @@
 /** @type {import('@sveltejs/kit').Config} */
 import adapterNode from '@sveltejs/adapter-node';
 import adapterStatic from '@sveltejs/adapter-static';
+import adapterNetlify from '@sveltejs/adapter-netlify';
 
 const config = {
   kit : {
@@ -12,12 +13,13 @@ const config = {
         // precompress : false,
         // env : {host : 'HOST', port : 'PORT'}
       // }),
-      adapterStatic({
-        pages : 'build',
-        assets : 'build',
-        fallback : null
-      }),
+      // adapterStatic({
+        // pages : 'build',
+        // assets : 'build',
+        // fallback : null
+      // }),
     // ]
+      adapterNetlify(),
     vite : {
       resolve : {
         alias : [
