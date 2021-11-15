@@ -1,17 +1,16 @@
 <script context="module">
-    import fs from "fs";
-    import org from "org";
+    import { parseRaw } from "./orgparser";
 
     export async function load({ page, fetch, session, stuff }) {
-        const url = `/blog/${page.params.postid}.json`;
+        const url = `/posts/${page.params.postid}.org`;
         const res = await fetch(url);
 
         if (res.ok) {
-            const { post : postHTML } = await res.json();
+            const contents = await res.text();
 
             return {
                 props: {
-                    post : postHTML
+                    post : parseRaw(contents)
                 }
             };
         }
@@ -57,5 +56,5 @@
  });
 </script>
 
-<div class="max-w-5xl mx-auto" id="org">{@html post}</div>
+<div class="max-w-5xl mx-auto" id="org">{@html post.toString()}</div>
 <div class="m-8 sm:m-16"></div>

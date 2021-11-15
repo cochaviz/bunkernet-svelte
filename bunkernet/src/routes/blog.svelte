@@ -1,8 +1,8 @@
 <script>
     import Typewriter from "../components/typewriter.svelte";
     import PostPreview from "../components/post-preview-small.svelte";
-    import {posts, fetchPosts} from "../poststore";
-    import {onMount} from "svelte";
+    import { posts, fetchPosts } from "../poststore";
+    import { onMount } from "svelte";
 
     onMount(() => {
         fetchPosts();

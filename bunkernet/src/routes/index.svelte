@@ -1,14 +1,29 @@
-<script>	
+<script context="module">
+    export async function load({ page, fetch, session, stuff }) {
+        const url = `/repos.json`;
+        const res = await fetch(url);
+
+        if (res.ok) {
+            const { repos } = await res.json();
+
+            return {
+                props: {
+                    repos
+                }
+            };
+        }
+        return {
+            status: res.status,
+            error: new Error(`Could not load ${url}`)
+        };
+    }
+</script>
+
+<script>
     import Typewriter from "../components/typewriter.svelte";
     import SlidingRepo from "../components/sliding-repo.svelte";
-    import {repos, fetchRepos} from "../repostore";
-    import {onMount} from "svelte";
 
-    onMount(() => {
-        fetchRepos();
-    });
-
-    $: numRepos = $repos.length;
+    export let repos;
 </script>
 
 <!--Home--->
@@ -38,11 +53,11 @@
         alt_color={"text-green dark:text-green"}
         clazz={"font-semibold text-2xl md:text-5xl"}
         command={"ls -l ~/Projects"} 
-        result={`total ${numRepos}`}
+        result={`total ${repos.length}`}
         idle={false}
     />
     <div class="grid num-cols-1 sm:p-16">
-        {#each $repos as repo}
+        {#each repos as repo}
             <div class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 border-dashed dark:border-gray border-gray-light py-16 sm:py-64">
                 <img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name}/>
                 <SlidingRepo repo={repo}/>
