@@ -1,13 +1,36 @@
+<script context="module">
+    export async function load({ page, fetch, session, stuff }) {
+        const url = `/blog/all.json`;
+        const res = await fetch(url);
+
+        if (res.ok) {
+            const { posts } = await res.json();
+
+            return {
+                props: {
+                    posts
+                }
+            };
+        }
+        return {
+            status: res.status,
+            error: new Error(`Could not load ${url}`)
+        };
+    }
+</script>
+
+<script>
+    import Typewriter from "../components/typewriter.svelte";
+    import SlidingRepo from "../components/sliding-repo.svelte";
+
+    export let repos;
+</script>
+
 <script>
     import Typewriter from "../components/typewriter.svelte";
     import PostPreview from "../components/post-preview-small.svelte";
-    import { posts, fetchPosts } from "../poststore";
-    import { onMount } from "svelte";
 
-    onMount(() => {
-        fetchPosts();
-    });
-    $: numPosts = $posts.length;
+    export let posts;
 </script>
 
 <!--Blog--->
