@@ -21,13 +21,6 @@
 
 <script>
     import Typewriter from "../components/typewriter.svelte";
-    import SlidingRepo from "../components/sliding-repo.svelte";
-
-    export let repos;
-</script>
-
-<script>
-    import Typewriter from "../components/typewriter.svelte";
     import PostPreview from "../components/post-preview-small.svelte";
 
     export let posts;
