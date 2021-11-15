@@ -56210,8 +56210,8 @@ init_shims();
 
 // .svelte-kit/output/server/app.js
 var import_fs = __toModule(require("fs"));
-var import_org = __toModule(require_org());
 var import_path = __toModule(require("path"));
+var import_org = __toModule(require_org());
 
 // node_modules/node-html-parser/esm/index.js
 init_shims();
@@ -56223,6 +56223,10 @@ var valid = import_dist.default.valid;
 var Node = import_dist.default.Node;
 var TextNode = import_dist.default.TextNode;
 var NodeType = import_dist.default.NodeType;
+
+// node_modules/highlight.js/es/index.js
+init_shims();
+var import_lib = __toModule(require_lib9());
 
 // node_modules/katex/dist/katex.mjs
 init_shims();
@@ -69527,10 +69531,6 @@ var renderToDomTree = function renderToDomTree2(expression, options2) {
   }
 };
 
-// node_modules/highlight.js/es/index.js
-init_shims();
-var import_lib = __toModule(require_lib9());
-
 // .svelte-kit/output/server/app.js
 function noop2() {
 }
@@ -69542,9 +69542,6 @@ function blank_object() {
 }
 function run_all(fns) {
   fns.forEach(run);
-}
-function safe_not_equal2(a, b) {
-  return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
 }
 function subscribe(store, ...callbacks) {
   if (store == null) {
@@ -69727,9 +69724,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-553adbf8.js",
+      file: assets + "/_app/start-3fcb6e4a.js",
       css: [assets + "/_app/assets/start-8077b9bf.css"],
-      js: [assets + "/_app/start-553adbf8.js", assets + "/_app/chunks/vendor-a4d1f3d1.js"]
+      js: [assets + "/_app/start-3fcb6e4a.js", assets + "/_app/chunks/vendor-3ad6df9f.js"]
     },
     fetched: void 0,
     floc: false,
@@ -69780,18 +69777,18 @@ var manifest = {
     },
     {
       type: "endpoint",
-      pattern: /^\/blog\/all\.json$/,
+      pattern: /^\/blog\/orgparser\/?$/,
       params: empty,
       load: () => Promise.resolve().then(function() {
-        return all_json;
+        return orgparser;
       })
     },
     {
       type: "endpoint",
-      pattern: /^\/blog\/([^/]+?)\.json$/,
-      params: (m) => ({ postid: d(m[1]) }),
+      pattern: /^\/blog\/all\.json$/,
+      params: empty,
       load: () => Promise.resolve().then(function() {
-        return _postid__json;
+        return all_json;
       })
     },
     {
@@ -69833,7 +69830,7 @@ var module_lookup = {
     return blog;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-325f7276.js", "css": ["assets/pages/__layout.svelte-72b630f9.css"], "js": ["pages/__layout.svelte-325f7276.js", "chunks/vendor-a4d1f3d1.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-f29f0000.js", "css": [], "js": ["error.svelte-f29f0000.js", "chunks/vendor-a4d1f3d1.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-f79fcdde.js", "css": [], "js": ["pages/index.svelte-f79fcdde.js", "chunks/vendor-a4d1f3d1.js", "chunks/typewriter-4afc9af2.js"], "styles": [] }, "src/routes/blog/[postid].svelte": { "entry": "pages/blog/[postid].svelte-b7269078.js", "css": [], "js": ["pages/blog/[postid].svelte-b7269078.js", "chunks/vendor-a4d1f3d1.js"], "styles": [] }, "src/routes/blog.svelte": { "entry": "pages/blog.svelte-6492790c.js", "css": [], "js": ["pages/blog.svelte-6492790c.js", "chunks/vendor-a4d1f3d1.js", "chunks/typewriter-4afc9af2.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-6f08d689.js", "css": ["assets/pages/__layout.svelte-72b630f9.css"], "js": ["pages/__layout.svelte-6f08d689.js", "chunks/vendor-3ad6df9f.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-c7f56500.js", "css": [], "js": ["error.svelte-c7f56500.js", "chunks/vendor-3ad6df9f.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-668af36a.js", "css": [], "js": ["pages/index.svelte-668af36a.js", "chunks/vendor-3ad6df9f.js", "chunks/typewriter-70fb5a99.js"], "styles": [] }, "src/routes/blog/[postid].svelte": { "entry": "pages/blog/[postid].svelte-9bfa7893.js", "css": [], "js": ["pages/blog/[postid].svelte-9bfa7893.js", "chunks/vendor-3ad6df9f.js"], "styles": [] }, "src/routes/blog.svelte": { "entry": "pages/blog.svelte-f3c6816f.js", "css": [], "js": ["pages/blog.svelte-f3c6816f.js", "chunks/vendor-3ad6df9f.js", "chunks/typewriter-70fb5a99.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles: styles2 } = metadata_lookup[file];
   return {
@@ -69850,7 +69847,7 @@ function render3(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender });
 }
-var repos$1;
+var repos;
 var token = process.env["GH_TOKEN"];
 var include = [
   "dotfiles",
@@ -69861,21 +69858,36 @@ var include = [
   "music-bot-family"
 ];
 var loaded = false;
-async function get$2() {
+async function get$1() {
   if (loaded) {
-    return { body: { repos: repos$1 } };
+    return { body: { repos } };
   }
   const octo = new import_core.Octokit({ auth: token });
   const { data } = await octo.request("GET /user/repos");
-  repos$1 = data.filter((repo) => repo.owner.login === "zoharcochavi" && repo.description != null && include.includes(repo.name));
+  repos = data.filter((repo) => repo.owner.login === "zoharcochavi" && repo.description != null && include.includes(repo.name));
   loaded = true;
-  return { body: { repos: repos$1 } };
+  return { body: { repos } };
 }
 var repos_json = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  get: get$2
+  get: get$1
 });
+function parseRaw(string) {
+  var parser = new import_org.default.Parser();
+  var orgDocument = parser.parse(string);
+  var orgHTMLDocument = orgDocument.convert(import_org.default.ConverterHTML, {
+    headerOffset: 1,
+    exportFromLineNumber: false,
+    suppressSubScriptHandling: false,
+    suppressAutoLink: false
+  });
+  return orgHTMLDocument;
+}
+function matchOrgBang(string, bang) {
+  let reg = new RegExp(`#+${bang}:.*`, "g");
+  return string.match(reg);
+}
 function readTags(string) {
   let matchedLine = string.match(/#\+TAGS:.*/g);
   if (matchedLine != null) {
@@ -69891,6 +69903,19 @@ function readDate(string) {
     return date;
   }
 }
+function getOrgMeta(string) {
+  const parsed = parseRaw(string);
+  return { title: parsed.title, tags: readTags(string), date: readDate(string) };
+}
+var orgparser = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  parseRaw,
+  matchOrgBang,
+  readTags,
+  readDate,
+  getOrgMeta
+});
 function getFiles(dir) {
   return import_fs.default.readdirSync(dir).flatMap((item) => {
     const path2 = `${dir}/${item}`;
@@ -69903,49 +69928,19 @@ function getFiles(dir) {
 function getFileName(path2) {
   return path2.slice(path2.lastIndexOf("/") + 1, path2.lastIndexOf("."));
 }
-function getOrgMeta(path2) {
-  const fileData = import_fs.default.readFileSync(path2, { encoding: "utf8", flag: "r" }).toString();
-  var parser = new import_org.default.Parser();
-  var orgDocument = parser.parse(fileData);
-  var orgHTMLDocument = orgDocument.convert(import_org.default.ConverterHTML, {
-    headerOffset: 1,
-    exportFromLineNumber: false,
-    suppressSubScriptHandling: false,
-    suppressAutoLink: false
-  });
-  return { postid: getFileName(path2), title: orgHTMLDocument.title, tags: readTags(fileData), date: readDate(fileData) };
+function getFileData(path2) {
+  return import_fs.default.readFileSync(path2, { encoding: "utf8", flag: "r" }).toString();
 }
-async function get$1() {
+async function get() {
   return {
     body: {
       posts: getFiles("./static/posts").map((path2) => {
-        return getOrgMeta(path2);
+        return { postid: getFileName(path2), data: getOrgMeta(getFileData(path2)) };
       })
     }
   };
 }
 var all_json = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  get: get$1
-});
-async function getPostHTML(postid) {
-  const fileName = `./static/posts/${postid}.org`;
-  const fileData = import_fs.default.readFileSync(fileName, { encoding: "utf8", flag: "r" }).toString();
-  var parser = new import_org.default.Parser();
-  var orgDocument = parser.parse(fileData);
-  var orgHTMLDocument = orgDocument.convert(import_org.default.ConverterHTML, {
-    headerOffset: 1,
-    exportFromLineNumber: false,
-    suppressSubScriptHandling: false,
-    suppressAutoLink: false
-  });
-  return orgHTMLDocument.toString();
-}
-async function get({ params }) {
-  return { body: { post: await getPostHTML(params.postid) } };
-}
-var _postid__json = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   get
@@ -70007,7 +70002,7 @@ var __layout = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": _layout
 });
-function load$1({ error: error22, status }) {
+function load$3({ error: error22, status }) {
   return { props: { error: error22, status } };
 }
 var Error$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -70030,7 +70025,7 @@ var error2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Error$1,
-  load: load$1
+  load: load$3
 });
 var Typewriter = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { command } = $$props;
@@ -70064,55 +70059,22 @@ var Sliding_repo = create_ssr_component(($$result, $$props, $$bindings, slots) =
   return `<a target="${"_blank"}" class="${"no-underline bg-gray-light dark:bg-gray p-6 shadow-xl hover:shadow transform hover:scale-105 text-center rounded-xl hover:border-cyan flex flex-col gap-4 justify-center"}"${add_attribute("href", `${repo.html_url}`, 0)}><h2 class="${"uppercase text-2xl"}">${escape3(repo.name)}</h2>
     <p>${escape3(repo.description)}</p></a>`;
 });
-var subscriber_queue2 = [];
-function writable2(value, start = noop2) {
-  let stop;
-  const subscribers = new Set();
-  function set(new_value) {
-    if (safe_not_equal2(value, new_value)) {
-      value = new_value;
-      if (stop) {
-        const run_queue = !subscriber_queue2.length;
-        for (const subscriber of subscribers) {
-          subscriber[1]();
-          subscriber_queue2.push(subscriber, value);
-        }
-        if (run_queue) {
-          for (let i = 0; i < subscriber_queue2.length; i += 2) {
-            subscriber_queue2[i][0](subscriber_queue2[i + 1]);
-          }
-          subscriber_queue2.length = 0;
-        }
-      }
-    }
+async function load$2({ page: page2, fetch: fetch22, session, stuff }) {
+  const url = `/repos.json`;
+  const res = await fetch22(url);
+  if (res.ok) {
+    const { repos: repos2 } = await res.json();
+    return { props: { repos: repos2 } };
   }
-  function update(fn) {
-    set(fn(value));
-  }
-  function subscribe2(run2, invalidate = noop2) {
-    const subscriber = [run2, invalidate];
-    subscribers.add(subscriber);
-    if (subscribers.size === 1) {
-      stop = start(set) || noop2;
-    }
-    run2(value);
-    return () => {
-      subscribers.delete(subscriber);
-      if (subscribers.size === 0) {
-        stop();
-        stop = null;
-      }
-    };
-  }
-  return { set, update, subscribe: subscribe2 };
+  return {
+    status: res.status,
+    error: new Error(`Could not load ${url}`)
+  };
 }
-var repos = writable2([]);
 var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let numRepos;
-  let $repos, $$unsubscribe_repos;
-  $$unsubscribe_repos = subscribe(repos, (value) => $repos = value);
-  numRepos = $repos.length;
-  $$unsubscribe_repos();
+  let { repos: repos2 } = $$props;
+  if ($$props.repos === void 0 && $$bindings.repos && repos2 !== void 0)
+    $$bindings.repos(repos2);
   return `
 
 <div id="${"Home"}" class="${"h-screen flex flex-col justify-around border-b-2 pb-8 gap-8 border-green mx-auto mb-8"}"><div class="${"h-full flex flex-col justify-evenly"}">${validate_component(Typewriter, "Typewriter").$$render($$result, {
@@ -70132,24 +70094,25 @@ var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     alt_color: "text-green dark:text-green",
     clazz: "font-semibold text-2xl md:text-5xl",
     command: "ls -l ~/Projects",
-    result: `total ${numRepos}`,
+    result: `total ${repos2.length}`,
     idle: false
   }, {}, {})}
-    <div class="${"grid num-cols-1 sm:p-16"}">${each($repos, (repo) => `<div class="${"flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 border-dashed dark:border-gray border-gray-light py-16 sm:py-64"}"><img class="${"w-4/5 mx-auto"}"${add_attribute("src", `${repo.name}.png`, 0)}${add_attribute("alt", repo.name, 0)}>
+    <div class="${"grid num-cols-1 sm:p-16"}">${each(repos2, (repo) => `<div class="${"flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 border-dashed dark:border-gray border-gray-light py-16 sm:py-64"}"><img class="${"w-4/5 mx-auto"}"${add_attribute("src", `${repo.name}.png`, 0)}${add_attribute("alt", repo.name, 0)}>
                 ${validate_component(Sliding_repo, "SlidingRepo").$$render($$result, { repo }, {}, {})}
             </div>`)}</div></div>`;
 });
 var index = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": Routes
+  "default": Routes,
+  load: load$2
 });
-async function load({ page: page2, fetch: fetch22, session, stuff }) {
-  const url = `/blog/${page2.params.postid}.json`;
+async function load$1({ page: page2, fetch: fetch22, session, stuff }) {
+  const url = `/posts/${page2.params.postid}.org`;
   const res = await fetch22(url);
   if (res.ok) {
-    const { post: postHTML } = await res.json();
-    return { props: { post: postHTML } };
+    const contents = await res.text();
+    return { props: { post: parseRaw(contents) } };
   }
   return {
     status: res.status,
@@ -70160,30 +70123,42 @@ var U5Bpostidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) =
   let { post } = $$props;
   if ($$props.post === void 0 && $$bindings.post && post !== void 0)
     $$bindings.post(post);
-  return `<div class="${"max-w-5xl mx-auto"}" id="${"org"}"><!-- HTML_TAG_START -->${post}<!-- HTML_TAG_END --></div>
+  return `<div class="${"max-w-5xl mx-auto"}" id="${"org"}"><!-- HTML_TAG_START -->${post.toString()}<!-- HTML_TAG_END --></div>
 <div class="${"m-8 sm:m-16"}"></div>`;
 });
 var _postid_ = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": U5Bpostidu5D,
-  load
+  load: load$1
 });
 var Post_preview_small = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { post } = $$props;
   if ($$props.post === void 0 && $$bindings.post && post !== void 0)
     $$bindings.post(post);
-  return `<a class="${"no-underline list-none p-6 rounded-md hover:bg-gray"}"${add_attribute("href", `/blog/${post.postid}`, 0)}><h2 class="${"uppercase text-2xl text-left m-2"}">&gt; ${escape3(post.title)}</h2>
-    <h3 class="${"text-dark m-2"}">${escape3(post.date)}</h3>
-    <div class="${"flex"}">${each(post.tags, (tag) => `<p class="${"mx-2 text-lg text-unselected"}">#${escape3(tag)}
+  return `<a class="${"no-underline list-none p-6 rounded-md hover:bg-gray"}"${add_attribute("href", `/blog/${post.postid}`, 0)}><h2 class="${"uppercase text-2xl text-left m-2"}">&gt; ${escape3(post.data.title)}</h2>
+    <h3 class="${"text-dark m-2"}">${escape3(post.data.date)}</h3>
+    <div class="${"flex"}">${each(post.data.tags, (tag) => `<p class="${"mx-2 text-lg text-unselected"}">#${escape3(tag)}
         </p>`)}</div></a>`;
 });
-var posts = writable2([]);
+async function load({ page: page2, fetch: fetch22, session, stuff }) {
+  const url = `/blog/all.json`;
+  const res = await fetch22(url);
+  if (res.ok) {
+    const { posts } = await res.json();
+    return { props: { posts } };
+  }
+  return {
+    status: res.status,
+    error: new Error(`Could not load ${url}`)
+  };
+}
 var Blog = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let numPosts;
   let $posts, $$unsubscribe_posts;
+  let { posts } = $$props;
   $$unsubscribe_posts = subscribe(posts, (value) => $posts = value);
-  numPosts = $posts.length;
+  if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
+    $$bindings.posts(posts);
   $$unsubscribe_posts();
   return `
 
@@ -70191,7 +70166,7 @@ var Blog = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     clazz: "font-semibold text-2xl md:text-5xl",
     alt_color: "text-cyan dark:text-cyan",
     command: "ls -al ~/Posts",
-    result: `total ${numPosts}`
+    result: `total ${posts.length}`
   }, {}, {})}</div></div>
 
 
@@ -70201,7 +70176,8 @@ var Blog = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 var blog = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": Blog
+  "default": Blog,
+  load
 });
 
 // .svelte-kit/netlify/entry.js

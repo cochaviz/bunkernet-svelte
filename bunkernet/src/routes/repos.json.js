@@ -1,4 +1,4 @@
-import {Octokit} from '@octokit/core';
+import { Octokit } from '@octokit/rest';
 import dotenv from 'dotenv/config';
 
 let repos;
@@ -16,7 +16,7 @@ export async function get() {
     return {body : {repos : repos}};
   }
   const octo = new Octokit({auth : token});
-  const {data : data} = await octo.request('GET /user/repos');
+  const {data : data} = await octo.rest.repos.listForAuthenticatedUser();
 
   repos = data.filter((repo) => repo.owner.login === 'zoharcochavi' &&
                                 repo.description != null &&

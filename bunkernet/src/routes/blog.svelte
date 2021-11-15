@@ -34,7 +34,7 @@
             clazz={"font-semibold text-2xl md:text-5xl"}
             alt_color={"text-cyan dark:text-cyan"}
             command={"ls -al ~/Posts"}
-            result={`total ${numPosts}`}
+            result={`total ${posts.length}`}
         />
     </div>
 </div>

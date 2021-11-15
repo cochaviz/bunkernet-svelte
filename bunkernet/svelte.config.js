@@ -7,19 +7,7 @@ const config = {
   kit : {
     // hydrate the <div id="svelte"> element in src/app.html
     target : '#svelte',
-    adapter : // [
-      // adapterNode({
-        // out : 'build',
-        // precompress : false,
-        // env : {host : 'HOST', port : 'PORT'}
-      // }),
-      // adapterStatic({
-        // pages : 'build',
-        // assets : 'build',
-        // fallback : null
-      // }),
-    // ]
-      adapterNetlify(),
+    adapter : adapterNetlify(),
     vite : {
       resolve : {
         alias : [
