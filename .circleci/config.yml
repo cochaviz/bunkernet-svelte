@@ -7,18 +7,26 @@ jobs:
     steps:
       - checkout
       - run: cd bunkernet && npm install && npm run build
+      - persist_to_workspace:
+          root: bunkernet
+          paths: [build]
+
   publish:
-    machine: true
+    docker:
+      - image: node
     steps:
       - checkout
+      - attach_workspace:
+          at: bunkernet/build
+      - add_ssh_keys:
+          fingerprints:
+            - "86:2e:e1:57:2c:e6:c4:ba:06:ea:87:4d:2b:6b:58:e6"
       - run: |
-         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
-
-      # build the application image
-      - run: docker build -t zoharcochavi/bunkernet:latest .
-
-      # deploy the image
-      - run: docker push zoharcochavi/bunkernet:latest
+          npm install -g --silent gh-pages@2.0.1
+          git config user.email "ci-build@bunkernet.dev"
+          git config user.name "ci-build"
+      - run: |
+          gh-pages --dist bunkernet/build
 
 workflows:
   version: 2
