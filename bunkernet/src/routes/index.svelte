@@ -2,7 +2,7 @@
 	import dotenv from 'dotenv/config';
 	import { Octokit } from '@octokit/rest';
 
-	export async function load({ page, fetch, session, stuff }) {
+	export async function load() {
 		const include = [
 			'dotfiles',
 			'BattleDucks',
