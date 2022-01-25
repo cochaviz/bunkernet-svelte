@@ -12,7 +12,8 @@ jobs:
           paths: [build]
 
   publish:
-    machine: true
+    docker:
+      - image: node
     steps:
       - checkout
       - attach_workspace:
