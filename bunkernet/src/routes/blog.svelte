@@ -1,13 +1,29 @@
+<script context="module">
+    export async function load({ page, fetch, session, stuff }) {
+        const url = `/blog/all.json`;
+        const res = await fetch(url);
+
+        if (res.ok) {
+            const { posts } = await res.json();
+
+            return {
+                props: {
+                    posts
+                }
+            };
+        }
+        return {
+            status: res.status,
+            error: new Error(`Could not load ${url}`)
+        };
+    }
+</script>
+
 <script>
     import Typewriter from "../components/typewriter.svelte";
     import PostPreview from "../components/post-preview-small.svelte";
-    import {posts, fetchPosts} from "../poststore";
-    import {onMount} from "svelte";
 
-    onMount(() => {
-        fetchPosts();
-    });
-    $: numPosts = $posts.length;
+    export let posts;
 </script>
 
 <!--Blog--->
@@ -18,7 +34,7 @@
             clazz={"font-semibold text-2xl md:text-5xl"}
             alt_color={"text-cyan dark:text-cyan"}
             command={"ls -al ~/Posts"}
-            result={`total ${numPosts}`}
+            result={`total ${posts.length}`}
         />
     </div>
 </div>
@@ -26,7 +42,7 @@
 <!--List of posts-->
 
 <div class="grid gap-4 sm:px-16 pb-16">
-    {#each $posts as post}
+    {#each posts as post}
         <PostPreview post={post}/>
     {/each}
 </div>
