@@ -42,7 +42,7 @@
 <!--List of posts-->
 
 <div class="grid gap-4 sm:px-16 pb-16">
-    {#each $posts as post}
+    {#each posts as post}
         <PostPreview post={post}/>
     {/each}
 </div>

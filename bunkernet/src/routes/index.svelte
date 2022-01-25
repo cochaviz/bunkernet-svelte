@@ -1,20 +1,24 @@
 <script context="module">
+    import dotenv from 'dotenv/config';
+    import { Octokit } from "@octokit/rest";
+
     export async function load({ page, fetch, session, stuff }) {
-        const url = `/repos.json`;
-        const res = await fetch(url);
+        const include = [
+        'dotfiles', 'BattleDucks', 'gopy', 'wikiscraper', 'dotfield',
+        'music-bot-family'
+        ];
 
-        if (res.ok) {
-            const { repos } = await res.json();
+        const token = process.env['GH_TOKEN'];
+        const octo = new Octokit({auth : token});
+        const { data } = await octo.rest.repos.listForAuthenticatedUser();
 
-            return {
-                props: {
-                    repos
-                }
-            };
-        }
+        let repos = data.filter((repo) => repo.owner.login === 'zoharcochavi' &&
+                                        repo.description != null &&
+                                        include.includes(repo.name));
         return {
-            status: res.status,
-            error: new Error(`Could not load ${url}`)
+            props: {
+                repos
+            }
         };
     }
 </script>
