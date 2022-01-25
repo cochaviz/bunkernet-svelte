@@ -20,13 +20,13 @@ jobs:
           at: bunkernet/build
       - add_ssh_keys:
           fingerprints:
-            - "86:2e:e1:57:2c:e6:c4:ba:06:ea:87:4d:2b:6b:58:e6"
+            - "4f:4f:31:6c:1a:6c:f3:0c:4b:3c:5e:44:15:01:56:32"
       - run: |
           npm install -g --silent gh-pages@2.0.1
           git config user.email "ci-build@bunkernet.dev"
           git config user.name "ci-build"
       - run: |
-          gh-pages --dist bunkernet/build
+          gh-pages --dotfiles --message "[skip ci] Updates" --dist bunkernet/build
 
 workflows:
   version: 2
