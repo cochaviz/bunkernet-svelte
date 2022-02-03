@@ -5,10 +5,10 @@
 	import '../tailwind.css';
 </script>
 
-<div class="sm:max-w-7xl w-5/6 mx-auto">
+<div class="min-h-screen w-5/6 max-w-6xl flex flex-col mx-auto">
 	<Nav />
-	<div class="h-full px-1 pb-1 sm:px-8">
-		<slot class="h-full" />
+	<div class="sm:px-8 mb-auto">
+		<slot />
 	</div>
 	<Foot />
 </div>
