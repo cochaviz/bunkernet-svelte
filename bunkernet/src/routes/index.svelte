@@ -54,7 +54,7 @@
 		worse)! This is the place where I collect most interesting things I come across, so feel free to
 		have a look and see if there is anything that catches your eye!
 	</p>
-	<div class="w-full lg:px-16 sm:pb-8 flex flex-row-reverse gap-4">
+	<div class="w-full lg:px-16 pb-8 flex flex-row-reverse gap-4">
 		<a target="_blank" href="https://github.com/zoharcochavi">
 			<img
 				class="transition transform hover:scale-100 w-8 sm:w-12"
