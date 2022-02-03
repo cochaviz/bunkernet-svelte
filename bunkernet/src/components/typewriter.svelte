@@ -86,11 +86,10 @@
 <div class={clazz + ' grid font-mono gap-2 sm:gap-8 auto-rows-auto'}>
 	<div class={clazz + ' flex'}>
 		<div class="pr-6">$</div>
-		<div id="typewriter" bind:this={typer}>{command}</div>
+		<div id="" bind:this={typer}>{command}</div>
 	</div>
-	<div class={'invisible'} bind:this={resultDiv}>{result}</div>
-	<div bind:this={nextline} class="invisible">
-		<div class="pr-6">$</div>
-		<div id="typewriter" />
+	<div class={alt_color} bind:this={resultDiv}>{result}</div>
+	<div bind:this={nextline}>
+		<div id="typewriter" class="pr-6">$&nbsp;</div>
 	</div>
 </div>

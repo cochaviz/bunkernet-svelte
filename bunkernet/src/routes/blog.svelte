@@ -28,7 +28,7 @@
 
 <!--Blog--->
 
-<div id="Posts" class="flex-col justify-around py-16 sm:py-32 gap-8 mx-auto mb-8">
+<div id="Posts" class="flex-col justify-around py-16 gap-8 mx-auto">
 	<div class="h-full flex flex-col justify-evenly">
 		<Typewriter
 			clazz={'font-semibold text-2xl md:text-5xl'}
@@ -41,7 +41,7 @@
 
 <!--List of posts-->
 
-<div class="grid gap-4 sm:px-16 pb-16">
+<div class="grid gap-4 sm:px-16 py-16">
 	{#each posts as post}
 		<PostPreview {post} />
 	{/each}

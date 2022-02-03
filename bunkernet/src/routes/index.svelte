@@ -41,53 +41,50 @@
 
 <div
 	id="Home"
-	class="h-screen flex flex-col justify-around border-b-2 pb-8 gap-8 border-green mx-auto mb-8"
+	class="min-h-1/2 max-h-4/5 flex flex-col justify-between border-b-2 sm:gap-y-32 gap-y-16 border-green pt-16"
 >
-	<div class="h-full flex flex-col justify-evenly">
-		<Typewriter
-			clazz={'font-semibold text-2xl md:text-5xl'}
-			alt_color={'text-cyan dark:text-cyan'}
-			command={'echo "Hi, my name is $(whoami)\\!"'}
-			result={'Hi, my name is Zohar!'}
-		/>
-		<p class="sm:px-16 lg:w-4/5">
-			"I’m a Computer Science student who is interested in pretty much everything (for better or for
-			worse)! This is the place where I collect most interesting things I come across, so feel free
-			to have a look and see if there is anything that catches your eye! :)"
-		</p>
-	</div>
+	<Typewriter
+		clazz={'font-semibold text-2xl md:text-5xl'}
+		alt_color={'text-cyan dark:text-cyan'}
+		command={'echo "Hi, my name is $(whoami)\\!"'}
+		result={'Hi, my name is Zohar!'}
+	/>
+	<p class="sm:px-16 lg:w-4/5">
+		I’m a Computer Science student who is interested in pretty much everything (for better or for
+		worse)! This is the place where I collect most interesting things I come across, so feel free to
+		have a look and see if there is anything that catches your eye!
+	</p>
 	<div class="w-full lg:px-16 sm:pb-8 flex flex-row-reverse gap-4">
-		<a target="_blank" href="https://github.com/zoharcochavi"
-			><img
-				class="transition transform hover:scale-110 w-8 sm:w-12"
+		<a target="_blank" href="https://github.com/zoharcochavi">
+			<img
+				class="transition transform hover:scale-100 w-8 sm:w-12"
 				src="/github_logo.png"
 				alt="Github profile of Zohar Cochavi"
-			/></a
-		>
-		<a target="_blank" href="https://www.linkedin.com/in/zoharcochavi/"
-			><img
-				class="transition transform hover:scale-110 w-8 sm:w-12"
+			/>
+		</a>
+		<a target="_blank" href="https://www.linkedin.com/in/zoharcochavi/">
+			<img
+				class="transition transform hover:scale-100 w-8 sm:w-12"
 				src="/linkedin_logo.png"
 				alt="Linkedin profile of Zohar Cochavi"
-			/></a
-		>
+			/>
+		</a>
 	</div>
 </div>
 
 <!--Projects--->
-
-<div class="flex flex-col pt-16 sm:pt-64">
+<div class="flex flex-col sm:py-16 py-8">
 	<Typewriter
 		alt_color={'text-green dark:text-green'}
-		clazz={'font-semibold text-2xl md:text-5xl'}
+		clazz={'font-semibold text-2xl md:text-5xl py-16'}
 		command={'ls -l ~/Projects'}
 		result={`total ${repos.length}`}
 		idle={false}
 	/>
-	<div class="grid num-cols-1 sm:p-16">
+	<div class="flex flex-col sm:px-16">
 		{#each repos as repo}
 			<div
-				class="flex gap-16 space-around sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 border-dashed dark:border-gray border-gray-light py-16 sm:py-64"
+				class="flex gap-16 sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 last:border-b-0 border-dashed border-gray-light py-16"
 			>
 				<img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name} />
 				<SlidingRepo {repo} />
