@@ -1,33 +1,33 @@
 .navtitle {
-    @apply no-underline mx-auto sm:mx-12 my-4 text-unselected text-lg sm:hover:text-green;
+	@apply no-underline mx-auto sm:mx-12 my-4 text-unselected text-lg sm:hover:text-green;
 }
 
 .selected {
-    @apply dark:text-dark text-light;
+	@apply dark:text-dark text-light;
 }
 
 #Home {
-    height: 85%;
+	height: 85%;
 }
 
-@media only screen and (min-width: 1280px) { 
-    #Home {
-        height: 90%;
-    }
+@media only screen and (min-width: 1280px) {
+	#Home {
+		height: 90%;
+	}
 }
 
-#typewriter:after{
-    content: "█";
-    animation: blink 1500ms steps(1, end) infinite;
+#typewriter:after {
+	content: '█';
+	animation: blink 1500ms steps(1, end) infinite;
 }
 
-@keyframes blink{
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
 }
 
 /* Dracula Theme v1.2.5
@@ -43,31 +43,31 @@
  */
 
 .hljs {
-  display: block;
-  overflow-x: auto;
+	display: block;
+	overflow-x: auto;
 }
 
 .hljs-built_in,
 .hljs-selector-tag,
 .hljs-section,
 .hljs-link {
-  color: #8be9fd;
+	color: #8be9fd;
 }
 
 .hljs-keyword {
-  color: #ff79c6;
+	color: #ff79c6;
 }
 
 .hljs,
 .hljs-subst {
-  color: #f8f8f2;
+	color: #f8f8f2;
 }
 
 .hljs-title,
 .hljs-attr,
 .hljs-meta-keyword {
-  font-style: italic;
-  color: #50fa7b;
+	font-style: italic;
+	color: #50fa7b;
 }
 
 .hljs-string,
@@ -80,13 +80,13 @@
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #f1fa8c;
+	color: #f1fa8c;
 }
 
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion {
-  color: #6272a4;
+	color: #6272a4;
 }
 
 .hljs-keyword,
@@ -98,14 +98,14 @@
 .hljs-type,
 .hljs-name,
 .hljs-strong {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .hljs-literal,
 .hljs-number {
-  color: #bd93f9;
+	color: #bd93f9;
 }
 
 .hljs-emphasis {
-  font-style: italic;
+	font-style: italic;
 }
