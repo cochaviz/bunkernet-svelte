@@ -84,7 +84,7 @@
 	<div class="flex flex-col sm:px-16">
 		{#each repos as repo}
 			<div
-				class="flex gap-16 sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 last:border-b-0 border-dashed border-gray-light py-16"
+				class="flex gap-16 sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 last:border-b-0 border-dashed dark:border-gray-light border-graycode-light  py-16"
 			>
 				<img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name} />
 				<SlidingRepo {repo} />
