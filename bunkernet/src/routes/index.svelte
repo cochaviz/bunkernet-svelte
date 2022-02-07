@@ -73,7 +73,7 @@
 </div>
 
 <!--Projects--->
-<div class="flex flex-col py-8">
+<div class="flex flex-col py-8 sm:py-16">
 	<Typewriter
 		alt_color={'text-cyan dark:text-cyan'}
 		clazz={'font-semibold text-2xl md:text-5xl py-8'}
