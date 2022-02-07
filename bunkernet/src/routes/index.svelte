@@ -73,10 +73,10 @@
 </div>
 
 <!--Projects--->
-<div class="flex flex-col sm:py-16 py-8">
+<div class="flex flex-col py-8">
 	<Typewriter
-		alt_color={'text-green dark:text-green'}
-		clazz={'font-semibold text-2xl md:text-5xl py-16'}
+		alt_color={'text-cyan dark:text-cyan'}
+		clazz={'font-semibold text-2xl md:text-5xl py-8'}
 		command={'ls -l ~/Projects'}
 		result={`total ${repos.length}`}
 		idle={false}

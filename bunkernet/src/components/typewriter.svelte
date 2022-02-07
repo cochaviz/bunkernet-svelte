@@ -84,7 +84,7 @@
 </script>
 
 <div class={clazz + ' grid font-mono gap-2 sm:gap-8 auto-rows-auto'}>
-	<div class={clazz + ' flex'}>
+	<div class={'flex'}>
 		<div class="pr-6">$</div>
 		<div id="" bind:this={typer}>{command}</div>
 	</div>
