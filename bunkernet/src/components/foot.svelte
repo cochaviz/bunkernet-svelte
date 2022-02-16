@@ -7,5 +7,5 @@
 		/>
 		<a href="https://github.com/zoharcochavi/bunkernet">Check the source!</a>
 	</div>
-	<p class="text-sm opacity-50">© Zohar Cochavi 2022</p>
+	<p class="font-sans text-sm opacity-50">© Zohar Cochavi 2022</p>
 </div>
