@@ -4,7 +4,8 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			mono: ['"Fira Code"'],
-			sans: ['"Lato"']
+			sans: ['"Lato"'],
+			serif: ['"Source"']
 		},
 
 		extend: {
@@ -57,7 +58,8 @@ module.exports = {
 			margin: ['odd, even'],
 			padding: ['odd, even'],
 			flexDirection: ['odd', 'even'],
-			scale: ['active', 'group-hover']
+			scale: ['active', 'group-hover'],
+			hidden: ['dark']
 		}
 	},
 	plugins: []

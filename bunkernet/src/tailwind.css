@@ -20,13 +20,13 @@
 	}
 
 	p {
-		@apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-medium tracking-wide;
+		@apply font-sans leading-8 sm:leading-10 text-xl sm:text-2xl font-serif;
 	}
 
 	/* Most of this is done for formatting the org-mode parsing results for the blog */
 
 	#org > p {
-		@apply font-sans text-sm sm:text-lg font-medium sm:mx-4 mb-4;
+		@apply text-sm sm:text-lg sm:mx-4 mb-4 font-serif;
 	}
 
 	span.todo {
@@ -38,7 +38,7 @@
 	}
 
 	ul {
-		@apply m-6;
+		@apply m-6 font-serif;
 	}
 
 	li {

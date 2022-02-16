@@ -1,6 +1,6 @@
 <script context="module">
-	import dotenv from 'dotenv/config';
 	import { Octokit } from '@octokit/rest';
+	import dotenv from 'dotenv/config';
 
 	export async function load() {
 		const include = [
@@ -12,7 +12,7 @@
 			'music-bot-family'
 		];
 
-		const token = process.env['GH_TOKEN'];
+		let token = process.env['GH_TOKEN'];
 		const octo = new Octokit({ auth: token });
 		const { data } = await octo.rest.repos.listForAuthenticatedUser();
 
@@ -34,7 +34,10 @@
 	import Typewriter from '../components/typewriter.svelte';
 	import SlidingRepo from '../components/sliding-repo.svelte';
 
+	export let lastRepo;
 	export let repos;
+
+	lastRepo = repos[repos.length - 1];
 </script>
 
 <!--Home--->
@@ -58,7 +61,7 @@
 		<a target="_blank" href="https://github.com/zoharcochavi">
 			<img
 				class="transition transform hover:scale-100 w-8 sm:w-12"
-				src="/github_logo.png"
+				src="/images/github-logo/PNG/GitHub-Mark-Light-120px-plus.png"
 				alt="Github profile of Zohar Cochavi"
 			/>
 		</a>
@@ -73,6 +76,7 @@
 </div>
 
 <!--Projects--->
+
 <div class="flex flex-col py-8 sm:py-16">
 	<Typewriter
 		alt_color={'text-cyan dark:text-cyan'}
@@ -81,11 +85,17 @@
 		result={`total ${repos.length}`}
 		idle={false}
 	/>
-	<div class="flex flex-col sm:px-16">
-		{#each repos as repo}
+	<div class="flex flex-col lg:px-16">
+		{#each repos.slice(0, -1) as repo}
 			<div
-				class="flex gap-16 sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 last:border-b-0 border-dashed dark:border-gray-light border-graycode-light  py-16"
+				class="flex gap-16 sm:odd:flex-row sm:even:flex-row-reverse flex-col border-b-4 border-dashed dark:border-graycode-dark border-graycode-light py-16"
 			>
+				<img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name} />
+				<SlidingRepo {repo} />
+			</div>
+		{/each}
+		{#each repos.slice(-1) as repo}
+			<div class="flex gap-16 sm:odd:flex-row sm:even:flex-row-reverse flex-col py-16">
 				<img class="w-4/5 mx-auto" src={`${repo.name}.png`} alt={repo.name} />
 				<SlidingRepo {repo} />
 			</div>
